@@ -1,0 +1,1 @@
+echo -e "\n\nThe current package manager is \e[32m" $1 "\e[39m\n\n"

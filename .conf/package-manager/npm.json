@@ -1,0 +1,49 @@
+{
+  "name": "next-template",
+  "version": "0.1.0",
+  "private": false,
+  "license": "ISC",
+  "scripts": {
+
+    "_default:section": "This section is the default one for a next project",
+
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+
+
+    "_clean:section": "This section is here to help you clan your repo",
+
+    "clean:modules": "rm -rf node_modules package-lock.json >> .logs/success/clean.log 2>> .logs/errors/clean.log",
+    "clean:next": "rm -rf .next >> .logs/success/clean.log 2>> .logs/errors/clean.log",
+    "clean": "npm run clean:modules ; npm run clean:next",
+
+
+    "_use:section": "The purpose of this section is to change the management of the packages.",
+
+    "use:npm": "npm run clean:modules ; bash .scripts/use/use.sh npm",
+    "use:yarn": "npm run clean:modules ; bash .scripts/use/use.sh yarn",
+    "use:current": "bash .scripts/use/current.sh npm",
+
+
+    "_docker:section": "This section contains Docker scripts",
+
+    "docker:build": "docker build .",
+    "docker:stop": "docker stop front >> .logs/success/docker.log 2>> .logs/errors/docker.log",
+    "docker:remove": "docker rm front >> .logs/success/docker.log 2>> .logs/errors/docker.log",
+    "docker:clean": "npm run docker:stop ; npm run docker:remove",
+    "docker:run:dev": "docker-compose up front",
+    "docker:run:prod": "docker-compose up -d front",
+
+
+    "_mode:section": "In this section, prepare you environment for a specific mode",
+
+    "mode:prod": "bash .scripts/mode/mode.sh prod npm",
+    "mode:dev": "bash .scripts/mode/mode.sh dev npm"
+  },
+  "dependencies": {
+    "next": "9.4.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}
