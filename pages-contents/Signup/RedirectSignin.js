@@ -9,6 +9,8 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from 'components/Card/CardFooter'
 import CardHeader from "components/Card/CardHeader.js";
 import Button from "@material-ui/core/Button";
+import Router from 'next/router'
+
 import styles from "assets/jss/nextjs-material-kit/pages/loginPage.js";
 
 

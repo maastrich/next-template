@@ -97,7 +97,7 @@ export default function LoginPage(props) {
                                     type: "username",
                                     endAdornment: (
                                         <InputAdornment position="end">
-                                            <Email className={classes.inputIconsColor} />
+                                            <People className={classes.inputIconsColor} />
                                         </InputAdornment>
                                     )
                                 }}
