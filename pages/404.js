@@ -5,7 +5,7 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { Container } from 'reactstrap'
-import Styles from 'assets/css/index.scss'
+import Styles from 'assets/scss/index.scss'
 import { withRouter } from 'next/router'
 import Router from 'next/router'
 

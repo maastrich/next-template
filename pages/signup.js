@@ -4,8 +4,8 @@ import { PageProvider } from 'components/Providers'
 
 export default function SignupProvider(props) {
     return (
-        <PageProvider pageName="Sign Up">
+        <PageProvider.Form pageName="Sign Up">
             <Signup {...props}/>
-        </PageProvider>
+        </PageProvider.Form>
     )
 }

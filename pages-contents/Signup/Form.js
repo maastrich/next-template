@@ -10,8 +10,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import Signup from "components/Register"
 import fetcher from 'fetch'
 
-import styles from "assets/jss/nextjs-material-kit/pages/loginPage.js";
-
+import styles from "assets/jss/pages/FormPage";
 
 import { useSnackbar } from 'notistack'
 import Router from "next/router";

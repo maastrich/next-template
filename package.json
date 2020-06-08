@@ -5,7 +5,7 @@
   "license": "ISC",
   "scripts": {
     "_default:section": "This section is the default one for a next project",
-    "dev": "next dev",
+    "dev": "npm rebuild node-sass && next dev",
     "build": "next build",
     "start": "next start",
     "_clean:section": "This section is here to help you clan your repo",

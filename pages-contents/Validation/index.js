@@ -10,8 +10,11 @@ import CardFooter from 'components/Card/CardFooter'
 import CardHeader from "components/Card/CardHeader.js";
 import Button from "@material-ui/core/Button";
 import Router from 'next/router'
+import fetcher from 'fetch'
+import Link from 'next/link'
 
 import styles from "assets/jss/pages/FormPage";
+import { StylesContext } from "@material-ui/styles";
 
 
 const useStyles = makeStyles(styles);
@@ -19,24 +22,52 @@ const useStyles = makeStyles(styles);
 export default function RedirectSignin(props) {
     const classes = useStyles();
     const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+    const [buttonText, setButtonText] = React.useState(null);
+    const [text, setText] = React.useState(null);
+    const [method, setMethod] = React.useState(null);
 
-    setTimeout(function () {
-        setCardAnimation("");
-    }, 700);
+    const getResponse = async () => {
+        const query = Router.query
+        const res = await fetcher.validation(query.id);
+        switch (res.status) {
+            case 200:
+                setButtonText('Let\'s sign in');
+                setText('Email successfully validated');
+                setMethod(onClickSignIn);
+                setCardAnimation("");
+                break;
+            default:
+                setButtonText('Get me back to signup');
+                setText('An error occured try again later..');
+                setMethod(onClickError);
+                setCardAnimation("");
+                break;
+        }
+    }
+
+    const onClickError = () => {
+        Router.push('/signup');
+    }
+
+    const onClickSignIn = () => {
+        Router.push('/signin');
+    }
+
+    getResponse();
     return (
         <GridContainer justify="center">
             <GridItem xs={12} sm={6} md={4}>
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>
                         <CardHeader color="primary" className={classes.cardHeader}>
-                            <h4>You've Sign Up</h4>
+                            <h4>Email</h4>
                         </CardHeader>
                         <CardBody>
-                            A verification link has been sent to your {props.mail}, please, check it out before signing in ;)
+                            {text}
                     </CardBody>
                         <CardFooter className={classes.cardFooter}>
-                            <Button color="primary" onClick={() => { Router.push('/signin') }}>
-                                Now Sign In
+                            <Button color="primary" onClick={method}>
+                                {buttonText}
                             </Button>
                         </CardFooter>
                     </form>

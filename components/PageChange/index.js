@@ -5,31 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 // core components
-//import { infoColor, title } from "assets/jss/nextjs-material-kit.js";
+import styles from 'assets/jss/components/PageChange'
 
-const useStyles = makeStyles({
-  progress: {
-//    color: infoColor,
-    width: "6rem !important",
-    height: "6rem !important"
-  },
-  wrapperDiv: {
-    margin: "100px auto",
-    padding: "0px",
-    maxWidth: "360px",
-    textAlign: "center",
-    position: "relative",
-    zIndex: "9999",
-    top: "0"
-  },
-  iconWrapper: {
-    display: "block"
-  },
-  title: {
-//    ...title,
-    color: "#FFFFFF"
-  }
-});
+const useStyles = makeStyles(styles);
 
 export default function PageChange(props) {
   const classes = useStyles();

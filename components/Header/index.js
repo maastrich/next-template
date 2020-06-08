@@ -12,32 +12,19 @@ import Router from 'next/router';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import Cookie from "js-cookie"
+import styles from "assets/jss/components/Header";
 
+//constUse
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: 1,
-    },
-}));
+const useStyles = makeStyles(theme => styles(theme));
 
 export default function Header(props) {
     const classes = useStyles();
     const { pageName } = props;
     const [anchorEl, setAnchorEl] = React.useState(null);
     const isMenuOpen = Boolean(anchorEl);
+    let renderMenu;
 
-    const onClickSignin = () => {
-        Router.push('/signin');
-    }
-    const onClickSignup = () => {
-        Router.push('/signup');
-    }
 
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
@@ -46,24 +33,52 @@ export default function Header(props) {
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
+    const setMenu = (menu) => {
+        renderMenu = menu;
+    }
 
-    const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={onClickSignin}>Signin</MenuItem>
-            <MenuItem onClick={onClickSignup}>Signup</MenuItem>
-        </Menu>
-    );
+    const getMenu = () => {
+        if (!Cookie.get("token")) {
+            return (<Menu
+                anchorEl={anchorEl}
+                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                keepMounted
+                transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                open={isMenuOpen}
+                onClose={handleMenuClose}
+            >
+                <MenuItem onClick={onClickSignin}>Signin</MenuItem>
+                <MenuItem onClick={onClickSignup}>Signup</MenuItem>
+            </Menu>)
+        }
+        return (
+            <Menu
+                anchorEl={anchorEl}
+                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                keepMounted
+                transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                open={isMenuOpen}
+                onClose={handleMenuClose}
+            >
+                <MenuItem onClick={onClickLogout}>Logout</MenuItem>
+            </Menu>)
+    }
 
+    const onClickSignin = () => {
+        Router.push('/signin');
+    }
+    const onClickSignup = () => {
+        Router.push('/signup');
+    }
+
+    const onClickLogout = () => {
+        Cookie.remove("token");
+        Router.push('/landing')
+    }
+    setMenu(getMenu())
     return (
         <div className={classes.root}>
-            <AppBar position="static" color="transparent">
+            <AppBar className={classes.appBar}>
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />

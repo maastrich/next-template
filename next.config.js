@@ -11,6 +11,7 @@ module.exports = withPlugins([[withSass], [withImages]], {
 	},
 	env: {
 		adress: 'http://127.0.0.1:3000',
-		api: 'http://127.0.0.1:8000/api/'
+		api: 'http://127.0.0.1:8000/api/',
+		color: 'ligth'
 	},
 });

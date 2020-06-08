@@ -1,13 +1,11 @@
 import React from "react";
-import { SnackbarProvider } from 'notistack';
-import { Header } from 'components'
+import { PageProvider } from 'components/Providers'
+import Landing from 'pages-contents/Landing'
 
-export default function LandingPage(props) {
+export default function LandingProvider(props) {
   return (
-
-    <SnackbarProvider maxSnack={3} anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}>
-      <Header pageName='Landing' />
-    </SnackbarProvider>
-
-  );
+    <PageProvider.Empty pageName="Landing">
+      <Landing/>
+    </PageProvider.Empty>
+  )
 }
