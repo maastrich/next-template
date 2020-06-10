@@ -5,15 +5,17 @@ async function validation(id) {
         const res = await fetch(process.env.api + 'profile',
         {
             headers: {
-                'Authorization': 'Bearer ' + Cookies.get('token')
+                'authorization': 'Bearer ' + Cookies.get('token')
             }
         })
         return res;
     }
     catch (e) {
         console.error(e);
+        return {
+            status: 500
+        }
     }
-    return null;
 }
 
 export default validation

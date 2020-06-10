@@ -8,9 +8,11 @@ import PageChange from "components/PageChange";
 import { makeStyles } from "@material-ui/core";
 switch (process.env.colors) {
 	case 'dark':
+		console.log('Dark Mode loaded')
 		require('assets/css/dark.scss');
 		break;
 	default:
+		console.log('Ligth Mode loaded')
 		require('assets/css/light.scss');
 		break;
 }
@@ -30,8 +32,10 @@ function Container(props) {
 Router.events.on("routeChangeStart", url => {
 	console.log(`Loading: ${url}`);
 	document.body.classList.add("body-page-transition");
+	const index =  url.indexOf('?');
+	const subUrl = url.substring(0, index);
 	ReactDOM.render(
-		<PageChange path={url} />,
+		<PageChange path={subUrl.length ? subUrl : url} />,
 		document.getElementById("page-transition")
 	);
 });

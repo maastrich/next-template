@@ -8,7 +8,9 @@ const cardHeaderStyle = {
         marginRight: "15px",
         marginTop: "-30px",
         border: "0",
-        marginBottom: "0"
+        marginBottom: "0",
+        backgroundColor: Colors.primary,
+        color: Colors.text,
     },
     cardHeaderPlain: {
         marginLeft: "0px",
@@ -16,7 +18,8 @@ const cardHeaderStyle = {
     },
     primaryCardHeader: {
         color: "#fff",
-        background: Colors.primary,
+        backgroundColor: Colors.primary,
+        textColor: Colors.text,
     }
 };
 

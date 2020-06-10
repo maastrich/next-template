@@ -4,17 +4,17 @@ const defaultColors = {
 	success: "#4caf50",
 	info: "#00acc1",
 	rose: "#e91e63",
-	gary: "#999999"
+	gray: "#999999"
 }
 
 const color = {
 	dark: {
 		primary: "#323232",
-		secondary: "#666666",
+		secondary: "#b2b2b2",
 		text: "#ffffff",
 		...defaultColors
 	},
-	ligth: {
+	light: {
 		primary: "#999999",
 		secondary: "#ffffff",
 		text: "#000000",

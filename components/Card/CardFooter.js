@@ -14,11 +14,22 @@ const useStyles = makeStyles(styles);
 
 export default function CardFooter(props) {
   const classes = useStyles();
-  const { className, children, ...rest } = props;
-  const cardFooterClasses = classNames({
-    [classes.cardFooter]: true,
-    [className]: className !== undefined
-  });
+  const { className, children, style, ...rest } = props;
+  let cardFooterClasses;
+  switch (style) {
+    case 'profile':
+      cardFooterClasses = classNames({
+        [classes.profile]: true,
+        [className]: className !== undefined
+      });
+      break;
+    default:
+      cardFooterClasses = classNames({
+        [classes.default]: true,
+        [className]: className !== undefined
+      });
+      break;
+  }
   return (
     <div className={cardFooterClasses} {...rest}>
       {children}
@@ -28,5 +39,6 @@ export default function CardFooter(props) {
 
 CardFooter.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  style: PropTypes.string
 };

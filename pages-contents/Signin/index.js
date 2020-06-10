@@ -48,14 +48,11 @@ export default function LoginPage(props) {
 		const resBody = await res.json();
 		switch (res.status) {
 			case 200:
-				handleVariant('success')(resBody.message);
 				Cookie.set("token", resBody.accessToken);
-				setTimeout(function () {
-					Router.push({
-						pathname: '/dashbord',
-						query: {message: resBody.message}
-					});
-				}, 2500);
+				Router.push({
+					pathname: '/dashbord',
+					query: { message: resBody.message }
+				});
 				break;
 			case 401:
 			case 403:

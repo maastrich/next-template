@@ -4,7 +4,7 @@ import { PageProvider } from 'components/Providers'
 
 export default function ProfileProvider(props) {
     return (
-        <PageProvider.Empty pageName="Sign In">
+        <PageProvider.Empty pageName="Profile">
             <Profile {...props} />
         </PageProvider.Empty>
     )

@@ -14,13 +14,26 @@ const useStyles = makeStyles(styles);
 
 export default function Card(props) {
   const classes = useStyles();
-  const { className, children, plain, carousel, ...rest } = props;
-  const cardClasses = classNames({
-    [classes.card]: true,
-    [classes.cardPlain]: plain,
-    [classes.cardCarousel]: carousel,
-    [className]: className !== undefined
-  });
+  const { className, children, plain, carousel, style, ...rest } = props;
+  let cardClasses;
+  switch (style) {
+    case 'profile':
+      cardClasses = classNames({
+        [classes.profile]: true,
+        [classes.cardPlain]: plain,
+        [classes.cardCarousel]: carousel,
+        [className]: className !== undefined
+      });
+      break;
+    default:
+      cardClasses = classNames({
+        [classes.default]: true,
+        [classes.cardPlain]: plain,
+        [classes.cardCarousel]: carousel,
+        [className]: className !== undefined
+      });
+      break;
+  }
   return (
     <div className={cardClasses} {...rest}>
       {children}
@@ -32,5 +45,6 @@ Card.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
   carousel: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  style: PropTypes.string,
 };

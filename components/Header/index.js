@@ -60,6 +60,7 @@ export default function Header(props) {
                 open={isMenuOpen}
                 onClose={handleMenuClose}
             >
+                <MenuItem onClick={onClickProfile}>Profile</MenuItem>
                 <MenuItem onClick={onClickLogout}>Logout</MenuItem>
             </Menu>)
     }
@@ -70,7 +71,9 @@ export default function Header(props) {
     const onClickSignup = () => {
         Router.push('/signup');
     }
-
+    const onClickProfile = () => {
+        Router.push('/profile');
+    }
     const onClickLogout = () => {
         Cookie.remove("token");
         Router.push('/landing')

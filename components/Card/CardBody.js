@@ -14,11 +14,22 @@ const useStyles = makeStyles(styles);
 
 export default function CardBody(props) {
   const classes = useStyles();
-  const { className, children, ...rest } = props;
-  const cardBodyClasses = classNames({
-    [classes.cardBody]: true,
-    [className]: className !== undefined
-  });
+  const { className, children, style, ...rest } = props;
+  let cardBodyClasses;
+  switch (style) {
+    case 'profile':
+      cardBodyClasses = classNames({
+        [classes.profile]: true,
+        [className]: className !== undefined
+      });
+      break;
+    default:
+      cardBodyClasses = classNames({
+        [classes.default]: true,
+        [className]: className !== undefined
+      });
+      break;
+  }
   return (
     <div className={cardBodyClasses} {...rest}>
       {children}
@@ -28,5 +39,6 @@ export default function CardBody(props) {
 
 CardBody.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  style: PropTypes.string
 };

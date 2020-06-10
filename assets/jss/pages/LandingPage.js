@@ -10,6 +10,10 @@ const title = {
   
 
 const productStyle = {
+	container: {
+		paddingTop: '10vh',
+		paddingButtom: '20vh',
+	},
 	section: {
 		textAlign: "center"
 	},
