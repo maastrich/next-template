@@ -1,0 +1,15 @@
+.ConnectionError {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: darkred !important;
+    color: white;
+}
+
+.ConnectionOk {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: darkgreen !important;
+    color: white;
+}

@@ -6,14 +6,14 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import People from "@material-ui/icons/People";
 import Lock from '@material-ui/icons/VpnKey';
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
 import Button from "@material-ui/core/Button";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardFooter from "components/Card/CardFooter.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
+import Card from "components/Card/Card";
+import CardBody from "components/Card/CardBody";
+import CardHeader from "components/Card/CardHeader";
+import CardFooter from "components/Card/CardFooter";
+import CustomInput from "components/CustomInput/CustomInput";
 import Router from "next/router";
 import fetcher from 'fetch'
 import Cookie from 'js-cookie'
@@ -50,7 +50,7 @@ export default function LoginPage(props) {
 			case 200:
 				Cookie.set("token", resBody.accessToken);
 				Router.push({
-					pathname: '/dashbord',
+					pathname: '/dashboard',
 					query: { message: resBody.message }
 				});
 				break;

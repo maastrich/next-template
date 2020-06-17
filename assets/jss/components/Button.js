@@ -2,7 +2,8 @@ import Colors from 'assets/colors'
 
 const buttonStyle = {
     buttonDanger: {
-        backgroundColor: Colors.danger
+        backgroundColor: Colors.danger,
+        color: Colors.text
     },
     buttonSuccess: {
         backgroundColor: Colors.success,

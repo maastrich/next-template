@@ -9,7 +9,7 @@ const useStyles = makeStyles(styles);
 function PageProvider(props) {
     const classes = useStyles();
     return (
-        <SnackbarProvider maxSnack={3} anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}>
+        <SnackbarProvider maxSnack={3} anchorOrigin={{ horizontal: 'center', vertical: 'top' }}>
             <Header
                 pageName={props.pageName}
             />

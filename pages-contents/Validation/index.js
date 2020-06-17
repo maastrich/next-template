@@ -2,16 +2,11 @@ import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from 'components/Card/CardFooter'
-import CardHeader from "components/Card/CardHeader.js";
+//import Card from "components/Card/Card";
+import { Card, Grid } from 'components'
 import Button from "@material-ui/core/Button";
 import Router from 'next/router'
 import fetcher from 'fetch'
-import Link from 'next/link'
 
 import styles from "assets/jss/pages/FormPage";
 import { StylesContext } from "@material-ui/styles";
@@ -55,24 +50,24 @@ export default function RedirectSignin(props) {
 
     getResponse();
     return (
-        <GridContainer justify="center">
-            <GridItem xs={12} sm={6} md={4}>
-                <Card className={classes[cardAnimaton]}>
+        <Grid.Container justify="center">
+            <Grid.Item xs={12} sm={6} md={4}>
+                <Card.Container className={classes[cardAnimaton]}>
                     <form className={classes.form}>
-                        <CardHeader color="primary" className={classes.cardHeader}>
+                        <Card.Header color="primary" className={classes.cardHeader}>
                             <h4>Email</h4>
-                        </CardHeader>
-                        <CardBody>
+                        </Card.Header>
+                        <Card.Body>
                             {text}
-                    </CardBody>
-                        <CardFooter className={classes.cardFooter}>
+                    </Card.Body>
+                        <Card.Footer className={classes.cardFooter}>
                             <Button color="primary" onClick={method}>
                                 {buttonText}
                             </Button>
-                        </CardFooter>
+                        </Card.Footer>
                     </form>
-                </Card>
-            </GridItem>
-        </GridContainer>
+                </Card.Container>
+            </Grid.Item>
+        </Grid.Container>
     )
 }

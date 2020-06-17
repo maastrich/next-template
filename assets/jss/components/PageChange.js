@@ -2,7 +2,7 @@ import Colors from 'assets/colors'
 
 const PageChange = {
     progress: {
-        color: Colors.secondaru,
+        color: Colors.primary,
         width: "6rem !important",
         height: "6rem !important"
     },

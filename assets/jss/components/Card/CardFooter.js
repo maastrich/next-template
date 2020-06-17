@@ -12,7 +12,6 @@ const cardFooterStyle = {
     },
     profile: {
       ...cardFooter,
-      backgroundColor: Colors.secondary,
       color: Colors.text,
       justifyContent: 'center',
     }

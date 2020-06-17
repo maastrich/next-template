@@ -1,6 +1,6 @@
 import React from 'react'
 import { SnackbarProvider } from 'notistack'
-import { Header } from "components";
+import { Header } from 'components';
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/pages/FormPage";
 
@@ -10,7 +10,7 @@ const useStyles = makeStyles(styles);
 function PageProvider(props) {
     const classes = useStyles();
     return (
-        <SnackbarProvider maxSnack={3} anchorOrigin={{ horizontal: 'center', vertical: 'bottom' }}>
+        <SnackbarProvider maxSnack={3} anchorOrigin={{ horizontal: 'center', vertical: 'top' }}>
             <Header
                 pageName={props.pageName}
             />

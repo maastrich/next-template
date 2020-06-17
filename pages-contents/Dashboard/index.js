@@ -6,6 +6,7 @@ import { useSnackbar } from 'notistack'
 export default function LandingPage(props) {
 	const [didMount, setDidMount] = React.useState(false);
 	const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
 	const handleVariant = (variant) => (message) => {
 		enqueueSnackbar(message, { variant });
 	};
@@ -28,8 +29,10 @@ export default function LandingPage(props) {
 		if (query) {
 			if (typeof query.error !== 'undefined')
 				handleVariant('error')(query.error)
-			if (typeof query.message !== 'undefined')
+			if (typeof query.message !== 'undefined') {
 				handleVariant('success')(query.message);
+				Router.push({pathname: '/dashboard', query: null})
+			}
 		}
 	}
 	return (

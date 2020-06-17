@@ -1,11 +1,11 @@
-import Card from './Card'
-import CardHeader from './CardHeader'
-import CardBody from './CardBody'
-import CardFooter from './CardFooter'
+import Container from './Card';
+import Header from './CardHeader';
+import Body from './CardBody';
+import Footer from './CardFooter';
 
-export default Card
 export {
-    CardHeader,
-    CardBody,
-    CardFooter
-}
+    Container,
+    Header,
+    Body,
+    Footer
+};

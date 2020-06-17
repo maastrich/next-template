@@ -2,12 +2,12 @@ import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // core components
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Card from "components/Card/Card.js";
-import CardBody from "components/Card/CardBody.js";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import Card from "components/Card/Card";
+import CardBody from "components/Card/CardBody";
 import CardFooter from 'components/Card/CardFooter'
-import CardHeader from "components/Card/CardHeader.js";
+import CardHeader from "components/Card/CardHeader";
 import Button from "@material-ui/core/Button";
 import Router from 'next/router'
 

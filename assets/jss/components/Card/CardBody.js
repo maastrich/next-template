@@ -4,7 +4,6 @@ const cardBodyStyle = {
     profile: {
       padding: "0.9375rem 1.875rem",
       textAlign: 'center',
-      backgroundColor: Colors.secondary,
       color: Colors.text,
       justifyContent: 'center',
       marginLeft: 'auto',

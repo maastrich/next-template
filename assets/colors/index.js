@@ -9,8 +9,9 @@ const defaultColors = {
 
 const color = {
 	dark: {
-		primary: "#323232",
-		secondary: "#b2b2b2",
+		primary: "#666666",
+		secondary: "#191919",
+		third: "#333333",
 		text: "#ffffff",
 		...defaultColors
 	},

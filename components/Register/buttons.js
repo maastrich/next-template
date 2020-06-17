@@ -6,6 +6,7 @@ import Lock from '@material-ui/icons/VpnKey';
 const buttons = [
     {
         "name": 'fname',
+        "id": "firstName",
         "label": 'First Name',
         "type": 'text',
         "regex": /[A-Za-z]+/,
@@ -14,6 +15,7 @@ const buttons = [
     },
     {
         "name": 'lname',
+        "id": "lastName",
         "label": 'Last Name',
         "type": 'text',
         "regex": /[A-Za-z]+/,
@@ -23,6 +25,7 @@ const buttons = [
     {
         "name": 'username',
         "label": 'Username',
+        "id": "Username",
         "type": 'text',
         "regex": /[A-Za-z]+/,
         "icon": <People/>,
@@ -31,6 +34,7 @@ const buttons = [
     {
         "name": 'mail',
         "label": 'Email',
+        "id": "Email",
         "type": 'email',
         "regex": /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
         "icon": <Email/>,
@@ -39,6 +43,7 @@ const buttons = [
     {
         "name": 'password',
         "label": 'Password',
+        "id": "Password",
         "type": 'password',
         "regex": /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
         "icon": <Lock/>,
@@ -48,9 +53,10 @@ const buttons = [
     },
     {
         "name": 'confirm',
+        "id": "confirmPassword",
         "label": 'Confirm Password',
         "type": 'password',
-        "regex": /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
+        "regex": null,
         "icon": <Lock/>,
         "helper": 'Please confirm your password',
     },

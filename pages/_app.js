@@ -3,31 +3,14 @@ import ReactDOM from "react-dom";
 import App from "next/app";
 import Head from "next/head";
 import Router from "next/router";
-import styles from 'assets/jss/components/MainDiv'
 import PageChange from "components/PageChange";
-import { makeStyles } from "@material-ui/core";
-switch (process.env.colors) {
-	case 'dark':
-		console.log('Dark Mode loaded')
-		require('assets/css/dark.scss');
-		break;
-	default:
-		console.log('Ligth Mode loaded')
-		require('assets/css/light.scss');
-		break;
-}
 
-const useStyles = makeStyles(styles);
+if (process.env.color === 'dark')
+	require('assets/css/dark.scss');
+else
+	require('assets/css/light.scss');
 
-//import "assets/scss/nextjs-material-kit.scss?v=1.0.0";
-function Container(props) {
-	const classes = useStyles();
-	return (
-		<div className={classes.background}>
-			{props.child}
-		</div>
-	)
-}
+
 
 Router.events.on("routeChangeStart", url => {
 	console.log(`Loading: ${url}`);
@@ -63,15 +46,13 @@ export default class MyApp extends App {
 	render() {
 		const { Component } = this.props;
 		return (
-			<Container child={
 				<React.Fragment>
 					<Head>
 						<title>Template Next Js</title>
 						<meta name="description" content="Template made with love by Maastrich"></meta>
 					</Head>
 					<Component />
-				</React.Fragment>}
-			/>
+				</React.Fragment>
 		);
 	}
 }

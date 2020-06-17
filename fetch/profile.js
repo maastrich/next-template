@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-async function validation(id) {
+async function profile() {
     try {
         const res = await fetch(process.env.api + 'profile',
         {
@@ -18,4 +18,4 @@ async function validation(id) {
     }
 }
 
-export default validation
+export default profile

@@ -1,4 +1,5 @@
 import container from "./container";
+import Colors from "../../colors";
 
 const FormPage = {
 	container: {
@@ -6,6 +7,7 @@ const FormPage = {
 		zIndex: "2",
 		position: "relative",
 		paddingTop: "20vh",
+		background: Colors.secondary,
 		color: "#FFFFFF",
 		paddingBottom: "200px"
 	},
