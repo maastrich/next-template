@@ -38,7 +38,7 @@
     "ionicons": "4.5.1",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
-    "next": "9.4.2",
+    "next": "13.5.0",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.4.0",
     "node-sass": "^4.14.1",
